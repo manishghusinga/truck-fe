@@ -7,12 +7,8 @@ import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  return ( // make overflow hidden in production
-    <div className="App"
-      style={{
-        overflow: process.env.REACT_APP_ENVIROMENT === "production" ? "hidden" : "auto"
-      }
-      }>
+  return (
+    <div className="App">
       <Store.Provider value={useReducer(combineReducers, initialState)}>
         <MainLayout />
         <ToastContainer/>
